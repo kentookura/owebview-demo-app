@@ -1,3 +1,5 @@
+include Routes
+
 let ( >> ) = Routes.( @--> )
 
 let target (request : Http.Request.t) =
