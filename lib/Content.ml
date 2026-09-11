@@ -38,7 +38,7 @@ let stylesheet =
   button:hover { background: #111; color: #fff; }
   |css}
 
-let index () =
+let index =
   html []
     [
       head []

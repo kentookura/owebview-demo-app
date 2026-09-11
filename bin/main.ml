@@ -1,6 +1,7 @@
 open Demo_app
 open Router
 open Server
+open Content
 
 let router : [ `Home | `Htmlact | `Increment | `Not_found ] Router.t =
   [
@@ -15,9 +16,9 @@ let serve () =
   Eio_main.run @@ fun env ->
   serve ~port ~env ~router @@ fun { route; _ } ->
   match route with
-  | `Home -> html `OK Content.(index ())
+  | `Home -> html `OK index
   | `Htmlact -> raw ~content_type:"text/javascript" `OK Content.htmlact
-  | `Increment -> html `OK Content.(increment ())
+  | `Increment -> html `OK @@ increment ()
   | `Not_found -> empty `Not_found
 
 let () =
