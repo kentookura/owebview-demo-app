@@ -1,0 +1,25 @@
+(rule
+ (targets htmlact_page_js.ml)
+ (deps htmlact-page.js)
+ (action
+  (with-stdout-to
+   htmlact_page_js.ml
+   (progn
+    (echo "let contents = {htmlact_js|")
+    (cat htmlact-page.js)
+    (echo "|htmlact_js}\n")))))
+
+(library
+ (name demo_app)
+ (libraries
+  eio
+  eio.unix
+  cohttp
+  cohttp-eio
+  http
+  jsont
+  jsont.bytesrw
+  uri
+  htmlact
+  routes
+  pure-html))

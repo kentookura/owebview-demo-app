@@ -1,0 +1,6 @@
+pin-depends: [
+  ["htmlact.dev" "git+https://erratique.ch/repos/htmlact"]
+  ["webs.dev" "git+https://erratique.ch/repos/webs"]
+  ["more.dev" "git+https://erratique.ch/repos/more"]
+  ["bytesrw.dev" "git+https://erratique.ch/repos/bytesrw"]
+]

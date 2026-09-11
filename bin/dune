@@ -1,0 +1,4 @@
+(executable
+ (public_name main)
+ (name main)
+ (libraries owebview threads.posix demo_app eio_main xdge))
