@@ -18,7 +18,7 @@ let serve ?(port = 8080) ?(backlog = 128) ?max_connections ~env ~router handler
     =
   Eio.Switch.run @@ fun sw ->
   let net = Eio.Stdenv.net env in
-  let router request = Router.route router request in
+  let router request = Router.(route @@ one_of router) request in
   let socket =
     Eio.Net.listen net ~sw ~backlog ~reuse_addr:true
       (`Tcp (Eio.Net.Ipaddr.V4.any, port))

@@ -12,7 +12,7 @@ val serve :
   ?backlog:int ->
   ?max_connections:int ->
   env:< net : [> [> `Generic ] Eio.Net.ty ] Eio.Resource.t ; .. > ->
-  router:([> `Not_found ] as 'a) Routes.router ->
+  router:([> `Not_found ] as 'a) Router.t ->
   ('a request -> Cohttp_eio.Server.response) ->
   'b
 

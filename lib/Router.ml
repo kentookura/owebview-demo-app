@@ -1,5 +1,7 @@
 include Routes
 
+type 'a t = 'a route list
+
 let ( >> ) = Routes.( @--> )
 
 let target (request : Http.Request.t) =

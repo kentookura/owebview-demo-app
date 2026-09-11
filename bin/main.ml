@@ -2,13 +2,12 @@ open Demo_app
 open Router
 open Server
 
-let router : [ `Home | `Htmlact | `Increment | `Not_found ] router =
-  one_of
-    [
-      get /? nil >> `Home;
-      get / s "htmlact.js" /? nil >> `Htmlact;
-      post / s "increment" /? nil >> `Increment;
-    ]
+let router : [ `Home | `Htmlact | `Increment | `Not_found ] Router.t =
+  [
+    get /? nil >> `Home;
+    get / s "htmlact.js" /? nil >> `Htmlact;
+    post / s "increment" /? nil >> `Increment;
+  ]
 
 let port = 8080
 
