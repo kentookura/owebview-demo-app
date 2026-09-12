@@ -19,7 +19,25 @@
  (name demo-app)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml owebview brr pure-html htmlact webs htmlit more routes)
+ (depends
+  ocaml
+  owebview
+  ; serveur HTTP
+  eio
+  eio_main
+  cohttp
+  cohttp-eio
+  http
+  uri
+  jsont
+  routes
+  ; rendu HTML
+  pure-html
+  htmlact
+  htmlit ; requis par htmlact mais absent de son fichier opam
+  webs ; idem
+  ; divers
+  xdge)
  (tags
   ("add topics" "to describe" your project)))
 
