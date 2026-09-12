@@ -13,13 +13,19 @@ depends: [
   "dune" {>= "3.24"}
   "ocaml"
   "owebview"
-  "brr"
+  "eio"
+  "eio_main"
+  "cohttp"
+  "cohttp-eio"
+  "http"
+  "uri"
+  "jsont"
+  "routes"
   "pure-html"
   "htmlact"
-  "webs"
   "htmlit"
-  "more"
-  "routes"
+  "webs"
+  "xdge"
   "odoc" {with-doc}
 ]
 build: [
